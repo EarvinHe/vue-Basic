@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件修饰符</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    
+</head>
+<body>
+    <div id="root">
+        <h1>什么是事件修饰符，问{{name}}</h1>
+        <a href="https://www.bilibili.com" @click.prevent="showInfo">点击提示信息</a>
+    </div>
+    <script type = "text/javascript">
+    Vue.config.productionTip = false//阻止产生提示
+        new Vue({
+            el:'#root',
+            data:{
+                name:'喵星人',
+                adress:'北京',
+            },
+            methods: {
+            showInfo(e){
+                //console.log(event.target.innerText)
+                //console.log(this)//此处的this式vm
+                alert("你好!!!")
+            }
+        },
+
+        });
+    </script>
+
+</body>
+</html>

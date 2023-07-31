@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>初识vue</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    
+</head>
+<body>
+    <div id="root">
+        <h1>hello,{{names}},{{adress}}</h1>
+        <h1>指令语法</h1>
+        <a V-bind:href="school.URL1">点击</a>
+        <!-- V-bind可以简写成 ':' -->
+    </div>
+    <script type = "text/javascript">
+    Vue.config.productionTip = false//阻止产生提示
+        new Vue({
+            el:'#root',//el用于指定当前vue实例为哪个容器服务，值为css选择器字符串
+            data:{//data中用于储存数据，数据供el所指定的容器去使用，值我们暂时先写一个对象
+                names:'喵星人',
+                adress:'北京',
+                URL:'http://www.atguigu.com/',
+                school:{ name:'何旺' ,
+                    URL1:'https://www.bilibili.com/' }
+
+
+            }
+        });
+    </script>
+    
+<!-- 创建vue项目 -->
+
+</body>
+</html>

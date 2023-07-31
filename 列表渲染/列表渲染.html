@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <script type="text/javascript" src="../js/vue.js"></script>
+<body>
+    <div id="root">
+        <button @click="add">添加一个老刘</button>
+        <ul>
+            <li v-for="(p, index) in Array" :key="p.id">
+                {{p.name}}-{{p.address}}
+                <input type="text">
+            </li>
+        </ul>
+    </div>
+</body>
+<!-- v-for指令：
+1.用于展示列表数据
+2.语法：v-for=“（item，index）in xxx” ：key=“yyy” 
+3.可遍历：数组，对象，字符串，指定次数-->
+
+
+<!-- 列表key的作用与原理 -->
+    <script type="text/javascript">
+        Vue.config.productionTip = false
+        new Vue({
+            el:'#root',
+            data:{
+   Array:[{ id:'001',name:'张三',address:'北京'},
+        {id:'002',name:'李四',address:'上海'},
+        {id:'003',name:'王五',address:'深圳'}]
+            },
+            methods: {
+                add(){
+                    const p = {id:'004',name:'老刘',address:'深圳'}
+                    this.Array.unshift(p)
+                }
+            },
+
+        })
+    </script>
+</html>
